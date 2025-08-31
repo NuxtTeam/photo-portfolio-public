@@ -3,8 +3,8 @@ useSeoMeta({
   title: 'Anastasiia Yablonska - Головна',
   description: 'Ласкаво просимо до мого портфоліо фотографій.'
 });
-import headerImg from '~/assets/images/IMG_3269_jLveJn.jpg';
-import burningManImg from '~/assets/images/IMG_2770.jpg';
+import headerImg from '~assets/images/IMG_3269_jLveJn.jpg';
+import burningManImg from '~assets/images/IMG_2770.jpg';
 </script>
 
 <template>
