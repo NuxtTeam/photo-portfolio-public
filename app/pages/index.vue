@@ -1,9 +1,8 @@
-<script setup lang="ts">
-import type { Product } from '~/types/product';
-useSeoMeta({
-  title: 'Anastasiia Yablonska - Головна',
-  description: 'Ласкаво просимо до мого портфоліо фотографій.'
-});
+<script>
+// useSeoMeta({
+//   title: 'Anastasiia Yablonska - Головна',
+//   description: 'Ласкаво просимо до мого портфоліо фотографій.'
+// });
 
 // const { data: products, pending } = await useAsyncData<Product[]>(
 //   'products',
@@ -14,7 +13,7 @@ useSeoMeta({
 <template>
   <header class="section_home-header">
     <div class="home-header_image-wrap">
-      <img src="/images/gallery/IMG_3271_opxZDR.jpg" />
+      <img src="/images/gallery/IMG_3269_jLveJn.jpg" />
     </div>
   </header>
 
