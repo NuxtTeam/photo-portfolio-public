@@ -1,19 +1,16 @@
-<script>
-// useSeoMeta({
-//   title: 'Anastasiia Yablonska - Головна',
-//   description: 'Ласкаво просимо до мого портфоліо фотографій.'
-// });
-
-// const { data: products, pending } = await useAsyncData<Product[]>(
-//   'products',
-//   () => $fetch('/api/products')
-// );
+<script lang="ts" setup>
+useSeoMeta({
+  title: 'Anastasiia Yablonska - Головна',
+  description: 'Ласкаво просимо до мого портфоліо фотографій.'
+});
+import headerImg from '~/assets/images/IMG_3269_jLveJn.jpg';
+import burningManImg from '~/assets/images/IMG_2770.jpg';
 </script>
 
 <template>
   <header class="section_home-header">
     <div class="home-header_image-wrap">
-      <img src="/images/gallery/IMG_3269_jLveJn.jpg" />
+      <img :src="headerImg" />
     </div>
   </header>
 
@@ -27,7 +24,7 @@
             class="work-list_block w-inline-block"
             ><div class="work-list_content">
               <img
-                src="/images/gallery/IMG_2770.jpg"
+                :src="burningManImg"
                 loading="lazy"
                 alt="Yurii Lisovenko"
                 sizes="100vw"
