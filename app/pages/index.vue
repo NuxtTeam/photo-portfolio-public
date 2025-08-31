@@ -3,14 +3,16 @@ useSeoMeta({
   title: 'Anastasiia Yablonska - Головна',
   description: 'Ласкаво просимо до мого портфоліо фотографій.'
 });
-import headerImg from '/assets/images/IMG_3269_jLveJn.jpg';
-import burningManImg from '/assets/images/IMG_2770.jpg';
+const gallery = [
+  '/images/gallery/IMG_2770.jpg',
+  '/images/gallery/IMG_3269_jLveJn.jpg'
+];
 </script>
 
 <template>
   <header class="section_home-header">
     <div class="home-header_image-wrap">
-      <img :src="headerImg" />
+      <img :src="gallery[1]" />
     </div>
   </header>
 
@@ -24,7 +26,7 @@ import burningManImg from '/assets/images/IMG_2770.jpg';
             class="work-list_block w-inline-block"
             ><div class="work-list_content">
               <img
-                :src="burningManImg"
+                :src="gallery[0]"
                 loading="lazy"
                 alt="Yurii Lisovenko"
                 sizes="100vw"
