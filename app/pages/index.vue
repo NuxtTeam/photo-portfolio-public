@@ -13,7 +13,7 @@
 <template>
   <header class="section_home-header">
     <div class="home-header_image-wrap">
-      <!-- <img src="/images/gallery/IMG_3269_jLveJn.jpg" /> -->
+      <img src="/images/gallery/IMG_3269_jLveJn.jpg" />
     </div>
   </header>
 
@@ -26,13 +26,13 @@
             to="/work/burning-man"
             class="work-list_block w-inline-block"
             ><div class="work-list_content">
-              <!-- <img
+              <img
                 src="/images/gallery/IMG_2770.jpg"
                 loading="lazy"
                 alt="Yurii Lisovenko"
                 sizes="100vw"
                 class="work-list_image"
-              /> -->
+              />
               <div class="work-list_infos">
                 <div class="padding-global">
                   <div class="work-list_infos-content">
