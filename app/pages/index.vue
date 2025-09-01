@@ -1,12 +1,9 @@
 <script lang="ts" setup>
+const gallery = useMainPhotos();
 useSeoMeta({
   title: 'Anastasiia Yablonska - Головна',
   description: 'Ласкаво просимо до мого портфоліо фотографій.'
 });
-const gallery = [
-  '/images/gallery/IMG_2770.jpg',
-  '/images/gallery/IMG_3269_jLveJn.jpg'
-];
 </script>
 
 <template>
