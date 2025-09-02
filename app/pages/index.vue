@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const gallery = useMainPhotos();
+// const gallery = useMainPhotos();
 useSeoMeta({
   title: 'Anastasiia Yablonska - Головна',
   description: 'Ласкаво просимо до мого портфоліо фотографій.'
@@ -9,7 +9,7 @@ useSeoMeta({
 <template>
   <header class="section_home-header">
     <div class="home-header_image-wrap">
-      <img :src="gallery[0]" />
+      <img src="/images/main_page/Anastasiia_Yablonska.jpg" />
     </div>
   </header>
 
@@ -23,7 +23,7 @@ useSeoMeta({
             class="work-list_block w-inline-block"
             ><div class="work-list_content">
               <img
-                :src="gallery[1]"
+                src="/images/main_page/IMG_2770.jpg"
                 alt="Yurii Lisovenko"
                 sizes="100vw"
                 class="work-list_image"

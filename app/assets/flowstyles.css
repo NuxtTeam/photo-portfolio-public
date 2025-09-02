@@ -4245,7 +4245,7 @@ figcaption {
   }
 
   .main-wrapper {
-    min-height: auto;
+    /* min-height: auto; */
   }
 
   .padding-section-large {

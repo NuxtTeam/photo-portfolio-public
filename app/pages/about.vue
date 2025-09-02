@@ -8,7 +8,7 @@
         <div class="about-header_image-wrap">
           <img
             alt="Anastasiia"
-            src="/images/Anastasiia_Yablonska.jpg"
+            src="/images/main_page/Anastasiia_Yablonska.jpg"
             loading="lazy"
             class="about-header_image"
             style="
