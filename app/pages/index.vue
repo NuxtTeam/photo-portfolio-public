@@ -7,9 +7,10 @@ useSeoMeta({
 </script>
 
 <template>
+  {{ gallery }}
   <header class="section_home-header">
     <div class="home-header_image-wrap">
-      <img :src="gallery[1]" />
+      <img :src="gallery[0]" />
     </div>
   </header>
 
@@ -23,8 +24,7 @@ useSeoMeta({
             class="work-list_block w-inline-block"
             ><div class="work-list_content">
               <img
-                :src="gallery[0]"
-                loading="lazy"
+                :src="gallery[1]"
                 alt="Yurii Lisovenko"
                 sizes="100vw"
                 class="work-list_image"
