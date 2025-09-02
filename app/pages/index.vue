@@ -9,7 +9,10 @@ useSeoMeta({
 <template>
   <header class="section_home-header">
     <div class="home-header_image-wrap">
-      <img src="/images/main_page/Anastasiia_Yablonska.jpg" />
+      <NuxtImg
+        src="/images/main_page/Anastasiia_Yablonska.jpg"
+        :placeholder="[1000]"
+      />
     </div>
   </header>
 
@@ -23,7 +26,7 @@ useSeoMeta({
             class="work-list_block w-inline-block"
             ><div class="work-list_content">
               <img
-                src="/images/main_page/IMG_2770.jpg"
+                src="/images/main_page/photo_3.jpg"
                 alt="Yurii Lisovenko"
                 sizes="100vw"
                 class="work-list_image"
@@ -37,32 +40,7 @@ useSeoMeta({
                 </div>
               </div>
             </div>
-            <div class="work-list_content black-text w-condition-invisible">
-              <img
-                src="https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd78c8b1b5ef1ce0c62fd6_jeremy-bishop-SWF2ccJB2aU-unsplash.jpg"
-                loading="lazy"
-                alt="Lorem ipsum"
-                sizes="100vw"
-                srcset="
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd78c8b1b5ef1ce0c62fd6_jeremy-bishop-SWF2ccJB2aU-unsplash-p-500.jpg   500w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd78c8b1b5ef1ce0c62fd6_jeremy-bishop-SWF2ccJB2aU-unsplash-p-800.jpg   800w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd78c8b1b5ef1ce0c62fd6_jeremy-bishop-SWF2ccJB2aU-unsplash-p-1080.jpg 1080w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd78c8b1b5ef1ce0c62fd6_jeremy-bishop-SWF2ccJB2aU-unsplash-p-1600.jpg 1600w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd78c8b1b5ef1ce0c62fd6_jeremy-bishop-SWF2ccJB2aU-unsplash-p-2000.jpg 2000w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd78c8b1b5ef1ce0c62fd6_jeremy-bishop-SWF2ccJB2aU-unsplash.jpg        2400w
-                "
-                class="work-list_image"
-              />
-              <div class="work-list_infos">
-                <div class="padding-global">
-                  <div class="work-list_infos-content">
-                    <h2>Burning man</h2>
-                    <div>Photography, Backstage</div>
-                  </div>
-                </div>
-              </div>
-            </div></NuxtLink
-          >
+          </NuxtLink>
         </div>
         <div role="listitem" class="work-list_item">
           <a
@@ -71,18 +49,9 @@ useSeoMeta({
             class="work-list_block w-inline-block"
             ><div class="work-list_content">
               <img
-                src="https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash.jpg"
+                src="/images/main_page/photo_8.jpg"
                 loading="lazy"
                 alt="Lorem ipsum"
-                sizes="100vw"
-                srcset="
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash-p-500.jpg   500w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash-p-800.jpg   800w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash-p-1080.jpg 1080w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash-p-1600.jpg 1600w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash-p-2000.jpg 2000w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash.jpg        2400w
-                "
                 class="work-list_image"
               />
               <div class="work-list_infos">
@@ -94,52 +63,19 @@ useSeoMeta({
                 </div>
               </div>
             </div>
-            <div class="work-list_content black-text w-condition-invisible">
-              <img
-                src="https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash.jpg"
-                loading="lazy"
-                alt="Lorem ipsum"
-                sizes="100vw"
-                srcset="
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash-p-500.jpg   500w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash-p-800.jpg   800w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash-p-1080.jpg 1080w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash-p-1600.jpg 1600w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash-p-2000.jpg 2000w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7c09c30c6263991dabb4_jakob-owens-SiniLJkXhMc-unsplash.jpg        2400w
-                "
-                class="work-list_image"
-              />
-              <div class="work-list_infos">
-                <div class="padding-global">
-                  <div class="work-list_infos-content">
-                    <h2>Dan &amp; Alice</h2>
-                    <div>Photography, Visuals</div>
-                  </div>
-                </div>
-              </div>
-            </div></a
-          >
+          </a>
         </div>
         <div role="listitem" class="work-list_item">
           <a
             aria-label="link to project"
             href="/work/porto-waves"
             class="work-list_block w-inline-block"
-            ><div class="work-list_content w-condition-invisible">
+          >
+            <div class="work-list_content black-text">
               <img
-                src="https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1.jpg"
+                src="/images/main_page/photo_9.jpg"
                 loading="lazy"
                 alt="Lorem ipsum"
-                sizes="100vw"
-                srcset="
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1-p-500.jpg   500w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1-p-800.jpg   800w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1-p-1080.jpg 1080w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1-p-1600.jpg 1600w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1-p-2000.jpg 2000w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1.jpg        2400w
-                "
                 class="work-list_image"
               />
               <div class="work-list_infos">
@@ -151,32 +87,7 @@ useSeoMeta({
                 </div>
               </div>
             </div>
-            <div class="work-list_content black-text">
-              <img
-                src="https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1.jpg"
-                loading="lazy"
-                alt="Lorem ipsum"
-                sizes="100vw"
-                srcset="
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1-p-500.jpg   500w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1-p-800.jpg   800w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1-p-1080.jpg 1080w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1-p-1600.jpg 1600w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1-p-2000.jpg 2000w,
-                  https://cdn.prod.website-files.com/66f9c946f6c153fc3a405bce/66fd7cd3cf97b40e4143de52_1.jpg        2400w
-                "
-                class="work-list_image"
-              />
-              <div class="work-list_infos">
-                <div class="padding-global">
-                  <div class="work-list_infos-content">
-                    <h2>Porto waves</h2>
-                    <div>Photography, Direction</div>
-                  </div>
-                </div>
-              </div>
-            </div></a
-          >
+          </a>
         </div>
       </div>
     </div>
@@ -200,30 +111,4 @@ useSeoMeta({
     </footer>
   </div>
 </template>
-<style scoped>
-.button::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 0;
-  background-color: #fff;
-  z-index: 0;
-  transition: height 0.5s ease;
-}
-
-.button:hover::before {
-  height: 100%;
-}
-
-.button {
-  position: relative; /* щоб текст був поверх псевдоелемента */
-  z-index: 1;
-  transition: color 0.5s ease;
-}
-
-.button:hover {
-  color: #000;
-}
-</style>
+<style scoped></style>

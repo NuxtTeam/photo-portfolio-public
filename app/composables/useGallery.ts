@@ -36,7 +36,7 @@ export const useGallery = async () => {
       const { width, height } = await getImageSize(img);
       return {
         largeURL: img,
-        thumbnailURL: img, // якщо хочеш окремо прев’ю, можна імпортувати thumbs
+        thumbnailURL: img,
         width,
         height
       };
