@@ -7,7 +7,6 @@ useSeoMeta({
 </script>
 
 <template>
-  {{ gallery }}
   <header class="section_home-header">
     <div class="home-header_image-wrap">
       <img :src="gallery[0]" />

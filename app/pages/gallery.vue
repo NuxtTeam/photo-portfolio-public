@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const { data: images } = await useFetch('/api/images');
+const images = await useGallery();
 </script>
 <template>
   <div class="gallery main-wrapper">

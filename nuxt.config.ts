@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: false },
   hooks: {
-    'build:before': async () => {
+    'app:resolve': async () => {
       console.log('🔨 Генерація превʼю та JSON...');
       await generateThumbs();
     }
