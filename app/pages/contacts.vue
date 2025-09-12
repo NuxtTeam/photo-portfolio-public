@@ -1,10 +1,37 @@
+<script lang="ts" setup>
+import { url } from 'inspector';
+
+const platforms = ref([
+  { icon: 'telegram', url: 'https://t.me/anastasiia_yablonska' },
+  { icon: 'instagram', url: 'https://www.instagram.com/anastasia_yablonska/' },
+  { icon: 'facebook', url: 'https://www.facebook.com/yablonskanastasia' }
+]);
+</script>
+
 <template>
   <section class="section_contact">
     <div class="padding-section-medium is-mobile-big"></div>
     <div class="padding-global">
       <div class="container-small">
         <div class="contact_component">
-          <h1 class="heading-style-h3">Contact</h1>
+          <div class="contact_row">
+            <h1 class="heading-style-h3">Contact</h1>
+            <div class="social_links">
+              <NuxtLink
+                v-for="platform in platforms"
+                :key="platform.url"
+                :to="platform.url"
+                class="platform_link"
+                target="_blank"
+                rel="noopener"
+              >
+                <img
+                  :src="`/icons/${platform.icon}.svg`"
+                  :alt="platform.icon"
+                />
+              </NuxtLink>
+            </div>
+          </div>
           <div class="spacer-large"></div>
           <div class="contact-form_component">
             <div class="contact-form_form-block w-form">
@@ -131,4 +158,3 @@
     <div class="padding-section-large"></div>
   </section>
 </template>
-<script lang="ts" setup></script>

@@ -4,14 +4,18 @@ useSeoMeta({
   title: 'Anastasiia Yablonska - Головна',
   description: 'Ласкаво просимо до мого портфоліо фотографій.'
 });
+const workList = ref([]);
+onMounted(async () => {
+  workList.value = await fetch('/work.json').then((res) => res.json());
+});
 </script>
 
 <template>
   <header class="section_home-header">
     <div class="home-header_image-wrap">
-      <NuxtImg
+      <img
         src="/images/main_page/Anastasiia_Yablonska.jpg"
-        :placeholder="[1000]"
+        alt="Anastasiia Yablonska"
       />
     </div>
   </header>
@@ -19,75 +23,34 @@ useSeoMeta({
   <section class="section_work-list">
     <div class="work-list_wrapper">
       <div role="list" class="work-list_list">
-        <div role="listitem" class="work-list_item">
+        <div
+          v-for="work in workList"
+          :key="work"
+          role="listitem"
+          class="work-list_item"
+        >
           <NuxtLink
             aria-label="link to project"
-            to="/work/burning-man"
+            :to="work.path"
             class="work-list_block w-inline-block"
-            ><div class="work-list_content">
+          >
+            <div class="work-list_content">
               <img
-                src="/images/main_page/photo_3.jpg"
-                alt="Yurii Lisovenko"
+                :src="work.images.at(-1).url"
+                :alt="work.slug"
                 sizes="100vw"
                 class="work-list_image"
               />
               <div class="work-list_infos">
                 <div class="padding-global">
-                  <div class="work-list_infos-content">
-                    <h2>Burning man</h2>
-                    <div>Photography, Backstage</div>
+                  <div class="work-list_infos-content capitalize">
+                    <h2>{{ work.slug }}</h2>
+                    <!-- <div>Photography, Backstage</div> -->
                   </div>
                 </div>
               </div>
             </div>
           </NuxtLink>
-        </div>
-        <div role="listitem" class="work-list_item">
-          <a
-            aria-label="link to project"
-            href="/work/dan-alice"
-            class="work-list_block w-inline-block"
-            ><div class="work-list_content">
-              <img
-                src="/images/main_page/photo_8.jpg"
-                loading="lazy"
-                alt="Lorem ipsum"
-                class="work-list_image"
-              />
-              <div class="work-list_infos">
-                <div class="padding-global">
-                  <div class="work-list_infos-content">
-                    <h2>Dan &amp; Alice</h2>
-                    <div>Photography, Visuals</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div role="listitem" class="work-list_item">
-          <a
-            aria-label="link to project"
-            href="/work/porto-waves"
-            class="work-list_block w-inline-block"
-          >
-            <div class="work-list_content black-text">
-              <img
-                src="/images/main_page/photo_9.jpg"
-                loading="lazy"
-                alt="Lorem ipsum"
-                class="work-list_image"
-              />
-              <div class="work-list_infos">
-                <div class="padding-global">
-                  <div class="work-list_infos-content">
-                    <h2>Porto waves</h2>
-                    <div>Photography, Direction</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </a>
         </div>
       </div>
     </div>

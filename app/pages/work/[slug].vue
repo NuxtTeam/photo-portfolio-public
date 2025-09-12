@@ -1,15 +1,20 @@
 <script setup lang="ts">
-const images = ref<Record<string, any>[]>([]);
+const works = ref<WorkCard[] | null>(null);
 const route = useRoute();
 const slug = route.params.slug as string;
-const firstImage = computed(() => images.value[slug]?.[5].url);
-const nextSlug = computed(() => {
-  const slugs = Object.keys(images.value);
+const work = ref<WorkCard | null>(null);
+
+const nextWork = computed(() => {
+  const slugs = works.value?.map((w) => w.slug) || [];
+  if (slugs.length === 0) return null;
+
   const currentIndex = slugs.indexOf(slug);
-  return slugs[(currentIndex + 1) % slugs.length];
+  return works.value?.[(currentIndex + 1) % slugs.length] || null;
 });
+
 onMounted(async () => {
-  images.value = await fetch('/work.json').then((res) => res.json());
+  works.value = await fetch('/work.json').then((res) => res.json());
+  work.value = works.value?.find((w: WorkCard) => w.slug === slug) || null;
 });
 </script>
 <template>
@@ -18,12 +23,12 @@ onMounted(async () => {
     <div class="padding-global">
       <div class="w-layout-blockcontainer container-medium w-container">
         <div class="content-align-center">
-          <div class="text-align-center">
-            <h1>{{ slug }}</h1>
+          <div class="text-align-center capitalize">
+            <h1>{{ work?.slug }}</h1>
           </div>
           <div class="spacer-xsmall"></div>
           <div class="work-infos_component">
-            <div>Photography, Backstage</div>
+            <!-- <div>Photography, Backstage</div> -->
           </div>
           <div class="spacer-huge"></div>
         </div>
@@ -34,19 +39,14 @@ onMounted(async () => {
           <img
             alt="Lorem ipsum"
             loading="lazy"
-            :src="firstImage"
+            :src="work?.images.at(-1).url"
             class="still-header_image"
-            style="
-              will-change: transform;
-              transform: translate3d(0px, 0px, 0px) scale3d(1.17596, 1.17596, 1)
-                rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-              transform-style: preserve-3d;
-            "
           />
         </div>
       </div>
     </div>
   </section>
+
   <section class="section_still-intro">
     <div class="padding-section-medium"></div>
     <div class="padding-global">
@@ -71,14 +71,14 @@ onMounted(async () => {
             <div
               role="listitem"
               class="still_item w-dyn-item w-dyn-repeater-item"
-              v-for="image in images[slug]"
+              v-for="image in work?.images"
             >
               <div class="work-image-wrap">
                 <img
                   loading="lazy"
                   :src="image.url"
                   alt=""
-                  class="work-image"
+                  class="work-image aspect-ratio-landscape"
                 />
               </div>
             </div>
@@ -96,7 +96,7 @@ onMounted(async () => {
           <div role="list" class="work-next_list w-dyn-items">
             <div role="listitem" class="work-next_item w-dyn-item">
               <NuxtLink
-                :to="`/work/${nextSlug}`"
+                :to="nextWork?.path"
                 class="work-next_block w-inline-block"
               >
                 <div class="work-infos_component">
@@ -107,15 +107,15 @@ onMounted(async () => {
                     class="work-infos_triangle"
                   />
                   <div>
-                    <div class="display-inline">Next work -</div>
-                    <div class="display-inline">
-                      {{ nextSlug }}
+                    <div class="display-inline"><span>Next work - </span></div>
+                    <div class="display-inline capitalize">
+                      {{ nextWork?.slug }}
                     </div>
                   </div>
                 </div>
 
                 <img
-                  :src="images[nextSlug]?.[0].url"
+                  :src="nextWork?.images.at(-1).url"
                   loading="lazy"
                   alt="Lorem ipsum"
                   class="work-next_image"

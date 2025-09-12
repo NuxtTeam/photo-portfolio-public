@@ -5,40 +5,62 @@ import sharp from 'sharp';
 export default async function generateWorkJson() {
   const workDir = path.join(process.cwd(), 'public/images/work');
 
-  // беремо тільки папки
   const entries = await fs.readdir(workDir, { withFileTypes: true });
   const folders = entries.filter((e) => e.isDirectory()).map((e) => e.name);
 
-  // результат тепер буде обʼєкт з ключами-папками
-  const result: Record<
-    string,
-    { url: string; width: number; height: number }[]
-  > = {};
+  const result: {
+    slug: string;
+    path: string;
+    images: PortfolioImage[];
+  }[] = [];
 
   for (const folder of folders) {
     const folderPath = path.join(workDir, folder);
     const files = await fs.readdir(folderPath);
-
     const images = files.filter((f) => /\.(jpg|jpeg|png|webp)$/i.test(f));
 
-    result[folder] = [];
+    const imageData: PortfolioImage[] = [];
 
     for (const f of images) {
       const filePath = path.join(folderPath, f);
-      const metadata = await sharp(filePath).metadata();
 
+      // 100% без помилок
+      let metadata;
+      try {
+        metadata = await sharp(filePath).metadata();
+      } catch (err) {
+        console.warn(`⚠️ Cannot read metadata for ${filePath}:`, err);
+        metadata = { width: 0, height: 0 };
+      }
+
+      // Завжди додаємо ключ aspectRatio
       const width = metadata.width || 0;
       const height = metadata.height || 0;
 
-      result[folder].push({
+      imageData.push({
         url: `/images/work/${folder}/${f}`,
         width,
-        height
+        height,
+        aspectRatio: height ? `${width} / ${height}` : '0 / 0'
       });
     }
+
+    result.push({
+      slug: folder,
+      path: `/work/${folder}`,
+      images: imageData
+    });
   }
 
-  const jsonPath = path.join(process.cwd(), 'public/work.json');
+  const jsonPath = path.join(process.cwd(), `public/work.json`);
+
+  // Жорстко видаляємо старий
+  try {
+    await fs.rm(jsonPath);
+  } catch {}
+
+  // Пишемо новий
   await fs.writeFile(jsonPath, JSON.stringify(result, null, 2), 'utf-8');
-  console.log('📄 work.json generated');
+
+  console.log('📄 work0.json regenerated');
 }

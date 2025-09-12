@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import generateGallery from './app/build-hooks/generate-gallery';
 import generateThumbs from './app/build-hooks/generate-thumbs';
 import generateWorkJson from './app/build-hooks/generate-work';
 
@@ -9,8 +10,9 @@ export default defineNuxtConfig({
   hooks: {
     'app:resolve': async () => {
       console.log('🔨 Генерація превʼю та JSON...');
-      await generateThumbs();
       await generateWorkJson();
+      await generateGallery();
+      await generateThumbs();
     }
   },
 
