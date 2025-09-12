@@ -63,9 +63,12 @@ const isOpenedNavBarLinks = ref(false);
 .mob {
   display: none;
 }
-@media screen and (max-width: 479px) {
-  .mob {
-    display: flex;
+@media screen and (max-width: 767px) {
+  .navbar_links {
+    /* display: none; */
+  }
+  .navbar_links.active {
+    /* display: flex; */
   }
 }
 

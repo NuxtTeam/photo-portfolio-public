@@ -28,7 +28,13 @@ export default async function generateThumbs() {
     try {
       await fs.access(thumbPath);
     } catch {
-      await sharp(filePath).rotate().resize({ width: 300 }).toFile(thumbPath);
+      await sharp(filePath)
+        .rotate()
+        .resize({
+          width: Math.round(metadata.autoOrient.width / 2),
+          height: Math.round(metadata.autoOrient.height / 2)
+        })
+        .toFile(thumbPath);
 
       console.log(`✅ Created thumb: ${f}`);
     }
